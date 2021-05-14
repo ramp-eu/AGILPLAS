@@ -9,8 +9,8 @@ void sendData() {
     String data = "{\r\n  \"actionType\": \"append\",\r\n  \"entities\": [\r\n    {\r\n      \"type\": \"" +
                   entityType + "\",\r\n      \"id\": \"" + entityId + "\",";
     // Loop through the read inputs and append them as entity attributes
-    for (int i = 0; i < sizeof(readInputs) / sizeof(readInputs[0]); i ++) {
-        data += "\r\n      \"" + alias[i] + "\": {\r\n" +
+    for (int i = 0; i < INPUTS_SIZE; i ++) {
+        data += "\r\n      \"" + inputs[i]->getAlias() + "\": {\r\n" +
                 "        \"value\": " + readInputs[i] + ",\r\n" +
                 "        \"type\": \"Integer\"\r\n" +
                 "      },";

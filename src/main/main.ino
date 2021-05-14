@@ -2,7 +2,8 @@
 // LIBRARIES
 ///////////////////////////////////////////////////////////////////
 #include "Ethernet.h"
-
+#include "Input/Input.hpp"
+#include "Input/Input.cpp"
 ///////////////////////////////////////////////////////////////////
 // ETHERNET
 ///////////////////////////////////////////////////////////////////
@@ -17,8 +18,21 @@ EthernetClient ethClient;
 ///////////////////////////////////////////////////////////////////
 // When selecting the correct M-Duino model, Arduino IDE maps inputs with the IX_X syntax.
 // Each digital input must have an alias. This alias determines the OCB entity attribute name.
-const int digitalInputs[] = { I0_0, I0_1, I0_2, I0_3, I0_4, I0_5, I0_6, I0_7, I0_8, I0_9, I0_10, I0_11 };
-const String alias[] = { "Input_0", "Input_1", "Input_2", "Input_3", "Input_4", "Input_5", "Input_6", "Input_7", "Input_8", "Input_9", "Input_10", "Input_11" };
+
+const Input* inputs[] = {
+    new Input(I0_0, "Input_0"),
+    new Input(I0_1, "Input_1"),
+    new Input(I0_2, "Input_2"),
+    new Input(I0_3, "Input_3"),
+    new Input(I0_4, "Input_4"),
+    new Input(I0_5, "Input_5"),
+    new Input(I0_6, "Input_6"),
+    new Input(I0_7, "Input_7"),
+    new Input(I0_8, "Input_8"),
+    new Input(I0_9, "Input_9"),
+    new Input(I0_10, "Input_10"),
+    new Input(I0_11, "Input_11")
+};
 
 const IPAddress orionIP (3, 127, 252, 24);
 const int orionPort = 1026;
@@ -34,27 +48,23 @@ const int POLLING_TIME = 10000;
 // SETUP
 ///////////////////////////////////////////////////////////////////
 unsigned long readMillis = 0;
-const int DIGITAL_INPUTS_SIZE = sizeof(digitalInputs) / sizeof(digitalInputs[0]);
-int readInputs[DIGITAL_INPUTS_SIZE] = {};
+const int INPUTS_SIZE = sizeof(inputs) / sizeof(inputs[0]);
+int readInputs[INPUTS_SIZE] = {};
 const String orionIPString = String(orionIP[0]) + "." + orionIP[1] + "." + orionIP[2] + "." + orionIP[3] + ":" + orionPort;
 
 void setup() {
-    // Set the digital pins as inputs
-    for (int i = 0; i < DIGITAL_INPUTS_SIZE; i++) {
-        pinMode(digitalInputs[i], INPUT);
+    Serial.begin(9600); // Start serial data transmission with the data rate in baud
+
+    Serial.println("----- Input Configuration:");
+    for (int i = 0; i < INPUTS_SIZE; i++) {
+        // Set the digital pins as inputs
+        pinMode(inputs[i]->getReference(), INPUT);
+        inputs[i]->serialPrint();
     }
 
     Ethernet.begin(mac, myIP);
     // Ethernet.begin(mac, myIP, myDNS, myGATEWAY, mySUBNET);
 
-    Serial.begin(9600); // Start serial data transmission with the data rate in baud
-
-    // If the inputs array differs in size with the alias array
-    if (DIGITAL_INPUTS_SIZE != sizeof(alias) / sizeof(alias[0])) {
-        Serial.println("ERROR: Each digital input must have a designated alias");
-        Serial.flush();
-        exit(-1);
-    }
 
     // Future interrupt-capable IOs extension, Reference: http://gammon.com.au/interrupts
     // attachInterrupt (digitalPinToInterrupt(BUTTON), switchPressed, CHANGE);  // attach interrupt handler
