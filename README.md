@@ -1,7 +1,7 @@
-## Requirements for the Mid-Term Review: [here](docs/README.md) 
+## Requirements for the Mid-Term Review: [here](docs/README.md)
 <hr />
 
-# <TITLE>
+# AGILPLAS ROSE-AP
 
 [![License: MIT](https://img.shields.io/github/license/ramp-eu/TTE.project1.svg)](https://opensource.org/licenses/MIT)
 [![Docker badge](https://img.shields.io/docker/pulls/ramp-eu/TTE.project1.svg)](https://hub.docker.com/r/<org>/<repo>/)
@@ -54,9 +54,19 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 
 ## Background
 
-```text
-Background information and links to relevant terms
-```
+This ROSE-AP is a bridge that connects M-DUINO PLCs with NGSI Context Brokers. An M-DUINO PLC is a robust piece of hardware designed to work in industrial environments. It can read and write data through digital, relay and analog pins; and has an underlying programmable Arduino board. The repository contains the necessary firmware to program and control the device’s behaviour. This firmware is Arduino (C++) code.
+
+A general schematic of the architecture can be seen below:
+
+<p align="center">
+    <img src="img/architecture.png" title="Architecture" alt="Architecture" width="80%">
+</p>
+
+- **Digital/analog inputs:** the M-DUINO resides in the electrical panel where it's linked to the desired digital or analog inputs. Each input goes into one of the pins. These pins will then be managed with the firmware.
+
+- **Arduino IDE:** open-source Arduino Software where the firmware is developed, configured and uploaded onto the board. USB-B is the standard for both firmware uploading and serial communication with the board.
+
+- **Orion Context Broker (OCB):** the data collected by the M-DUINO is forwarded towards an OCB which holds this information as an entity. This is achieved via the NGSIv2 REST API. OCB then acts as a central hub where other applications can manipalute its context information.
 
 ## Install
 
