@@ -7,8 +7,10 @@
 ///////////////////////////////////////////////////////////////////
 // ETHERNET
 ///////////////////////////////////////////////////////////////////
+// Configure your mac and local IP for the Ethernet library
+// https://www.arduino.cc/en/Reference/EthernetBegin
 byte mac[] = {0x90, 0xA2, 0xDA, 0x10, 0x00, 0x99};
-IPAddress myIP (192, 168, 110, 223);
+IPAddress myIP (0, 0, 0, 0);
 // IPAddress myDNS (8, 8, 8, 8);
 // IPAddress myGATEWAY (128, 64, 10, 1);
 // IPAddress mySUBNET (255, 255, 255, 0);
@@ -34,7 +36,8 @@ const Input* inputs[] = {
     new Input(I0_11, "Input_11")
 };
 
-const IPAddress orionIP (3, 127, 252, 24);
+// Configure your OCB instance IP
+const IPAddress orionIP (0, 0, 0, 0);
 const int orionPort = 1026;
 
 const String entityType = "MDuino";
