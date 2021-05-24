@@ -32,9 +32,7 @@ Note that the CII Best Practices questionaire will request evidence of tooling u
 
 ```
 
-```text
-One or two sentence preamble describing the element
-```
+This ROSE-AP is a bridge that connects M-DUINO PLCs with NGSI Context Brokers.
 
 This project is part of [DIH^2](http://www.dih-squared.eu/). For more information check the RAMP Catalogue entry for the
 [components](https://github.com/xxx).
@@ -54,7 +52,7 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 
 ## Background
 
-This ROSE-AP is a bridge that connects M-DUINO PLCs with NGSI Context Brokers. An M-DUINO PLC is a robust piece of hardware designed to work in industrial environments. It can read and write data through digital, relay and analog pins; and has an underlying programmable Arduino board. The repository contains the necessary firmware to program and control the device’s behaviour. This firmware is Arduino (C++) code.
+An M-DUINO PLC is a robust piece of hardware designed to work in industrial environments. It can read and write data through digital, relay and analog pins; and has an underlying programmable Arduino board. The repository contains the necessary firmware to program and control the device’s behaviour. This firmware is Arduino (C++) code.
 
 A general schematic of the architecture can be seen below:
 
