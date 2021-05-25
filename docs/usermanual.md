@@ -145,6 +145,7 @@ curl --location --request GET 'http://10.11.0.55:1026/v2/entities?type=MDuino'
         --header 'fiware-servicepath: /'
 ```
     **Response**:
+
     ```
     [
         {
