@@ -20,14 +20,24 @@ If the boards aren't installed refer to [Arduino IDE board installation guide](h
 
 4. This code is written in Arduino (C++ with some additional features). There are two mandatory functions:
     - [`setup()`](https://www.arduino.cc/reference/en/language/structure/sketch/setup/) is called when a sketch starts.
+
     - [`loop()`](https://www.arduino.cc/reference/en/language/structure/sketch/loop/) does precisely what its name suggests, and loops consecutively.
+
     - Check the [language reference](https://www.arduino.cc/reference/en/) for the complete documentation.
 
-5. Use `Sketch > Verify/Compile` or Ctrl+R to check your code for errors compiling it.
+5. On top of this functions, this implementation contains:
+    - [`Input`](/src/main/Input) class with `reference` and `alias` member variables.
 
-6. Use `Sketch > Upload` or Ctrl+U to compile your code and upload it to the configured board (via USB-B).
+    - [`readData()`](/src/main/readData.ino) function that loops through the digital inputs storing their value.
 
-6. Use `Tools > Serial Monitor` or Ctrl+Shift+M to open the Serial monitor. This is our main debugging tool.
+    - [`sendData()`](/src/main/sendData.ino) function that builds a request with the previously read data. Then sends it towards OCB.
+    > /v2/op/update endpoint is used with "append" mode. This will create the entity if it doesn't exist and update its attributes otherwise.
+
+6. Use `Sketch > Verify/Compile` or Ctrl+R to check your code for errors compiling it.
+
+7. Use `Sketch > Upload` or Ctrl+U to compile your code and upload it to the configured board (via USB-B).
+
+8. Use `Tools > Serial Monitor` or Ctrl+Shift+M to open the Serial monitor. This is our main debugging tool.
 
 ## Libraries
 
