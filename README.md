@@ -56,25 +56,11 @@ An M-DUINO PLC is a robust piece of hardware designed to work in industrial envi
 
 ## Install
 
-```text
-How to install the component
-
-Information about how to install the <Name of component> can be found at the corresponding section of the
-[Installation & Administration Guide](docs/installationguide.md).
-
-A `Dockerfile` is also available for your use - further information can be found [here](docker/README.md)
-
-```
+Information about how to install the AGILPLAS ROSE-AP can be found at the corresponding section of the [Installation & Administration Guide](docs/installationguide.md).
 
 ## Usage
 
-```text
-How to use the component
-
 Information about how to use the <Name of component> can be found in the [User & Programmers Manual](docs/usermanual.md).
-
-The following features are listed as [deprecated](docs/deprecated.md).
-```
 
 ## API
 
