@@ -75,7 +75,8 @@ Check the [example](#example).
 ```
 const int POLLING_TIME = 10000;
 ```
-Milliseconds that will elapse between the input readings. **Note**: the fact that sendData() takes time is taken into account. If it takes longer than the polling time itself, don't delay at all.
+Milliseconds that will elapse between the input readings.
+> **Note**: the fact that sendData() takes time is taken into account. If it takes longer than the polling time itself, then readData() is called right after.
 
 ## Example
 
