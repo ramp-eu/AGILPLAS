@@ -46,7 +46,7 @@ The only library used is [Ethernet.h](https://www.arduino.cc/en/Reference/Ethern
 ## Variable Configuration
 
 - **Ethernet variables**:
-```
+```c++
 byte mac[] = {0x90, 0xA2, 0xDA, 0x10, 0x00, 0x99};
 IPAddress myIP (0, 0, 0, 0);
 // IPAddress myDNS (8, 8, 8, 8);
@@ -56,7 +56,7 @@ IPAddress myIP (0, 0, 0, 0);
 These variables are used by the Ethernet.h library to establish an Internet connection. They are used by the `Ethernet.begin(...);` method. [Further information](https://www.arduino.cc/en/Reference/EthernetBegin).
 
 - **Input array**:
-```
+```c++
 const Input* inputs[] = {
     new Input(I0_0, "Input_0"),
     new Input(I0_1, "Input_1"),
@@ -67,7 +67,7 @@ This array contains Input objects which are pairs of (input reference, alias).
 The alias will be used to name this input as an OCB entity attribute. Check the [example](#example).
 
 - **Orion Context Broker variables**:
-```
+```c++
 const IPAddress orionIP (0, 0, 0, 0);
 const int orionPort = 1026;  
 ```
@@ -82,7 +82,7 @@ Alongside we can set both the OCB entity type and id which will represent the de
 Check the [example](#example).
 
 - **Polling time**:
-```
+```c++
 const int POLLING_TIME = 10000;
 ```
 Milliseconds that will elapse between the input readings.
@@ -91,7 +91,7 @@ Milliseconds that will elapse between the input readings.
 ## Example
 
 Consider the following configuration:
-```
+```c++
 byte mac[] = {0x90, 0xA2, 0xDA, 0x10, 0x00, 0x99};
 IPAddress myIP (192, 168, 110, 223);
 const Input* inputs[] = {
@@ -112,7 +112,7 @@ const int POLLING_TIME = 10000;
 1. It will set the M-Duino mac and IP as stated.
 
 2. It will poll the inputs referenced by (`I0_0`, `I0_1`) every 10 seconds and then perform the following POST:
-```
+```http
 POST /v2/op/update HTTP/1.1
 Content-Type: application/json
 fiware-service: openiot
@@ -144,23 +144,22 @@ curl --location --request GET 'http://10.11.0.55:1026/v2/entities?type=MDuino'
         --header 'fiware-service: openiot'
         --header 'fiware-servicepath: /'
 ```
-    **Response**:
-
-    ```
-    [
-        {
-            "id": "MDuino_1",
-            "type": "MDuino",
-            "Input_0": {
-                "type": "Integer",
-                "value": 0,
-                "metadata": {}
-            },
-            "Input_1": {
-                "type": "Integer",
-                "value": 0,
-                "metadata": {}
-            }
+**Response**:
+```json
+[
+    {
+        "id": "MDuino_1",
+        "type": "MDuino",
+        "Input_0": {
+            "type": "Integer",
+            "value": 0,
+            "metadata": {}
+        },
+        "Input_1": {
+            "type": "Integer",
+            "value": 0,
+            "metadata": {}
         }
-    ]
-    ```
+    }
+]
+```
