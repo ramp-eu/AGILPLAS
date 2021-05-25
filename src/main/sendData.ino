@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////
-// Send the previously read data towards OCB /v2/op/update enpoint
-// with "append" mode which will create the entity if it doesn't
+// Send the previously read data towards OCB /v2/op/update endpoint
+// with "append" mode, which will create the entity if it doesn't
 // exist and update its attributes otherwise.
 ///////////////////////////////////////////////////////////////////
 void sendData() {
