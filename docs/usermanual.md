@@ -100,7 +100,7 @@ const int POLLING_TIME = 10000;
 ```
 1. It will set the M-Duino mac and IP as stated.
 
-2. It will poll the inputs referenced by (`I0_0`, `I0_1`, `I0_2`, `I0_3`) every 10 seconds and then perform the following POST:
+2. It will poll the inputs referenced by (`I0_0`, `I0_1`) every 10 seconds and then perform the following POST:
 ```
 POST /v2/op/update HTTP/1.1
 Content-Type: application/json
