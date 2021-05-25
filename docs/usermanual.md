@@ -7,7 +7,7 @@
 
 ## Startup
 
-1. Download the code in this repository `src` folder.
+1. Download the code in this repository's `src` folder.
 
 2. Start Arduino IDE and select `File > Open... > main.ino` file. This will open the whole main sketch and both `readData.ino` and `sendData.ino`.
 
@@ -137,3 +137,29 @@ Content-Length: 272
     ]
 }
 ```
+
+3. Now we can check in OCB:
+```console
+curl --location --request GET 'http://10.11.0.55:1026/v2/entities?type=MDuino'
+        --header 'fiware-service: openiot'
+        --header 'fiware-servicepath: /'
+```
+    **Response**:
+    ```
+    [
+        {
+            "id": "MDuino_1",
+            "type": "MDuino",
+            "Input_0": {
+                "type": "Integer",
+                "value": 0,
+                "metadata": {}
+            },
+            "Input_1": {
+                "type": "Integer",
+                "value": 0,
+                "metadata": {}
+            }
+        }
+    ]
+    ```
