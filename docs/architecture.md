@@ -1,7 +1,7 @@
 A general schematic of the architecture can be seen below:
 
 <p align="center">
-    <img src="/img/architecture.png" title="Architecture" alt="Architecture" width=90%">
+    <img src="img/architecture.png" title="Architecture" alt="Architecture" width=90%">
 </p>
 
 - **Digital/analog inputs:** the M-DUINO resides in the electrical panel where it's linked to the desired digital or analog inputs. Each input goes into one of the pins. These pins will then be managed with the firmware.
