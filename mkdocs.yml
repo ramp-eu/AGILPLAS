@@ -1,19 +1,18 @@
-site_name: <site-name>
-site_url: https://<site-url>
-repo_url: https://github.com/<repo_url>
-site_description: RAMP Documentation
+site_name: AGILPLAS ROSE-AP
+site_url: https://github.com/ramp-eu/AGILPLAS
+repo_url: https://github.com/ramp-eu/AGILPLAS
+site_description: AGILPLAS ROSE-AP Documentation
 docs_dir: docs
 site_dir: html
-edit_uri: edit/master/doc/
 markdown_extensions: [toc,fenced_code]
 use_directory_urls: false
 theme: readthedocs
-pages:
-  - Home: 'index.md'
+nav:
+  - Home: 'README.md'
   - 'Getting Started' : 'getting-started.md'
-  - 'User & Programmers Manual':
+  - User & Programmers Manual:
     - 'Architecture' : 'architecture.md'
     - 'API' : 'api.md'
     - 'User Guide': 'usermanual.md'
-  - 'Installation & Administration Manual': 
+  - 'Installation & Administration Manual':
     - 'Installation Guide': 'installationguide.md'

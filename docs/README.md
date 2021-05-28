@@ -1,84 +1,62 @@
-# Mid-Term Review
+# AGILPLAS ROSE-AP
+
+[![License: MIT](https://img.shields.io/github/license/ramp-eu/TTE.project1.svg)](https://opensource.org/licenses/MIT)
+[![Documentation Status](https://readthedocs.org/projects/agilplas/badge/?version=latest)](https://agilplas.readthedocs.io/en/latest/?badge=latest)
+[![Build badge](https://img.shields.io/travis/ramp-eu/TTE.project1.svg)](https://travis-ci.org/ramp-eu/TTE.project1/)
+[![Coverage Status](https://coveralls.io/repos/github/ramp-eu/TTE.project1/badge.svg?branch=master)](https://coveralls.io/github/ramp-eu/TTE.project1?branch=master)
+<!-- [![Codacy grade](https://img.shields.io/codacy/grade/99310c5c4332439197633912a99d2e3c)](https://app.codacy.com/manual/jason-fox/TTE.project1) -->
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4885/badge)](https://bestpractices.coreinfrastructure.org/projects/4885)
+
+
+This ROSE-AP is a bridge that connects M-DUINO PLCs with NGSI Context Brokers.
+
+This project is part of [DIH^2](http://www.dih-squared.eu/). For more information check the RAMP Catalogue entry for the
+[components](https://github.com/xxx).
+
+| :books: [Documentation](https://tte-project1.readthedocs.io/en/latest/) | :whale: [Docker Hub](https://hub.docker.com/r/link-to-docker) |
+| --------------------------------------------- | ------------------------------------------------------------- |
+
 
 ## Contents
 
 -   [Background](#background)
-    -   [Use Case Description](#use-case-description)
-    -   [Proposed Solution](#proposed-solution)
--   [Mid-Term Setup Implementation Description](#mid-term-setup-implementation-description)
--   [Demo](#demo)
-    -   [Install](#install)
-    -   [Usage](#usage)
-    -   [API](#api)
-    -   [Testing](#testing)
+-   [Install](#install)
+-   [Usage](#usage)
+-   [API](#api)
+-   [Testing](#testing)
 -   [License](#license)
 
 ## Background
 
-#### Use Case Description
+An M-DUINO PLC is a robust piece of hardware designed to work in industrial environments. It can read and write data through digital, relay and analog pins; and has an underlying programmable Arduino board. The repository contains the necessary firmware to program and control the device’s behaviour. This firmware is Arduino (C++) code.
 
-#### Proposed Solution
+## Install
 
-## Setup Overview
-```
-Overview the Docker-Based Implementation contributed in this Setup (This section is associated with the slide "Setup Overview: Docker-based Implementation" in D3)
-```
+Information about how to install the AGILPLAS ROSE-AP can be found at the corresponding section of the [Installation & Administration Guide](docs/installationguide.md).
 
-#### Architecture
-A more detailed description of this architecture is available here [Architecture Description](architecture.md)
-```
-(This section is associated with the slide "Setup Overview: Architecture" in D3)
-```
+## Usage
 
-```
-Background information and links to relevant terms
-```
-## Demo
-#### Install
-In order to install the components of our demo, follow the instructions provided in this file: [Installation & Administration Guide](installationguide.md)
-```
-Within the docs folder, the "installationguide.md" is to be filled with information on how to install the demo components
-and their dependencies.
+Information about how to use the <Name of component> can be found in the [User & Programmers Manual](docs/usermanual.md).
 
-A convenient simulator or simulated/dummy datasets will be contributed when the source code, binaries, and/or functionality
-of a given component cannot be shared as part of the public demo due to privacy- or deployment-related issues.
-```
+## API
 
-#### Usage
-Information about how to use the demo components can be found in the [User & Programmers Manual](usermanual.md).
-```
-Within the docs folder, the "installationguide.md" is to be filled with information on how to use and configure the
-components of the demo.
-```
+```text
+Definition of the API interface:
 
-#### API
-Detailed descriptions of the demo component APIs are available in the [API documentation](api.md) 
-```
-Within the docs folder, the "api.md" is to be filled with the definition of component APIs.
-
-Special emphasis will be put on the description of NGSI APIs, providing tas many details as possible on the 
-the subscriptions, registrations, requests, and responses associated with each component of the demo. 
-
-Non-NGSI APIs will be fully described only if they define an interface to an NGSI-Compliant component.
-
-Non-NGSI APIs in charge of enabling interfaces between components that are totally opaque from the NGSI
-point of view will be listed and/or shortly described if they are of relevance to understand, install or
-use the demo.
-```
-
-#### Testing
+Information about the API of  the <Name of component> can be found in the [API documentation](docs/api.md).
 
 ```
-This section will contribute step-by-step procedures to perform a basic end-to-end test of the setup 
-features described in the mid-term review demo. For each test, the definition of the step-by-tep procedure
-may consist of:
-- Description of the use case that the test aim to cover
-- Definition of the required inputs and steps to retrieve meaningful outputs
-- A convenient simulator or simulated/dummy datasets to validate the use case in cases where the source 
-code, binaries, and/or functionality of a given component cannot be shared as part of the public demo.
+
+## Testing
+
+```text
+How to test the component
+
+For performing a basic end-to-end test, you have to follow the step below. A detailed description about how to run tests can be found [here].
+
+> npm test
+
 ```
-
-
 
 ## License
 
