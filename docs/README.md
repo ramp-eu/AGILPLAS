@@ -32,18 +32,18 @@ An M-DUINO PLC is a robust piece of hardware designed to work in industrial envi
 
 ## Install
 
-Information about how to install the AGILPLAS ROSE-AP can be found at the corresponding section of the [Installation & Administration Guide](docs/installationguide.md).
+Information about how to install the AGILPLAS ROSE-AP can be found at the corresponding section of the [Installation & Administration Guide](installationguide.md).
 
 ## Usage
 
-Information about how to use the <Name of component> can be found in the [User & Programmers Manual](docs/usermanual.md).
+Information about how to use the <Name of component> can be found in the [User & Programmers Manual](usermanual.md).
 
 ## API
 
 ```text
 Definition of the API interface:
 
-Information about the API of  the <Name of component> can be found in the [API documentation](docs/api.md).
+Information about the API of  the <Name of component> can be found in the [API documentation](api.md).
 
 ```
 
