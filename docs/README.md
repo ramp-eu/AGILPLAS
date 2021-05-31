@@ -44,4 +44,4 @@ Information about how to use the <Name of component> can be found in the [User &
 
 ## License
 
-[MIT](LICENSE) © <TTE>
+[Apache 2.0](LICENSE) © 2021 Bosonit S.L.
