@@ -1,6 +1,6 @@
 # AGILPLAS ROSE-AP
 
-[![License: MIT](https://img.shields.io/github/license/ramp-eu/TTE.project1.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache](https://img.shields.io/github/license/ramp-eu/AGILPLAS.svg)](https://www.apache.org/licenses/LICENSE-2.0.html#redistribution)
 [![Documentation Status](https://readthedocs.org/projects/agilplas/badge/?version=latest)](https://agilplas.readthedocs.io/en/latest)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4885/badge)](https://bestpractices.coreinfrastructure.org/projects/4885)
 <!-- [![Codacy grade](https://img.shields.io/codacy/grade/99310c5c4332439197633912a99d2e3c)](https://app.codacy.com/manual/jason-fox/TTE.project1) -->
