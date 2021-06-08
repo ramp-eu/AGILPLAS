@@ -1,66 +1,44 @@
 # README.md for DockerHub
 
-```
-Amend as necessary...
-```
+## Introduction
 
-## How to build an image
+This section assumes you have Docker installed. If not, check the [installation guide](/docs/installationguide.md).
 
-The [Dockerfile](https://github.com/jason-fox/TTE.project1/blob/master/docker/Dockerfile) associated with this image can
-be used to build an image in several ways:
+This ROSE-AP classifies as firmware which has been developed with a physical M-DUINO. In order to dockerize this experience, a simulator image has been developed. The simulation consists of two main tools:
 
--   By default, the `Dockerfile` retrieves the **latest** version of the codebase direct from GitHub (the `build-arg` is
-    optional):
+- **arduino-cli**: a command line interface which implements all of the Arduino IDE. It lets us compile and upload our code. Check its documentation [here](https://arduino.github.io/arduino-cli/latest/).
 
-```console
-docker build -t <component> . --build-arg DOWNLOAD=latest
-```
+- **simavr**: an AVR simulator that uses avr-gcc. In order to simplify things, we use it to replicate the M-DUINO's underlying Arduino board and run our firmware. Check its repository [here](https://arduino.github.io/arduino-cli/latest/).
 
--   You can alter this to obtain the last **stable** release run this `Dockerfile` with the build argument
-    `DOWNLOAD=stable`
+## Built image
+
+You can find an already built image [here](https://hub.docker.com/r/jaclavijo/agilplas). You can pull it with the following command:
 
 ```console
-docker build -t <component> . --build-arg DOWNLOAD=stable
+docker pull jaclavijo/agilplas:latest
 ```
 
--   You can also download a specific release by running this `Dockerfile` with the build argument `DOWNLOAD=<version>`
+This image has arduino-cli and simavr already installed and a clone of this repository.
+
+Check out the [Step by Step tutorial](/docs/stepbystep.md) which uses it.
+
+## Build your own image
+
+The [Dockerfile](Dockerfile) associated with the previous image can be used to build your own image.
 
 ```console
-docker build -t <component> . --build-arg DOWNLOAD=1.7.0
+docker build -t <component> .
 ```
 
-## Building from your own fork
-
-To download code from your own fork of the GitHub repository add the `GITHUB_ACCOUNT`, `GITHUB_REPOSITORY` and
-`SOURCE_BRANCH` arguments (default `master`) to the `docker build` command.
-
-```console
-docker build -t <component> . \
-    --build-arg GITHUB_ACCOUNT=<your account> \
-    --build-arg GITHUB_REPOSITORY=<your repo> \
-    --build-arg SOURCE_BRANCH=<your branch>
+This is advised if you want to edit the default environment variables of the repo:
+```dockerfile
+ENV ARDUINO_MAC=0x90,0xA2,0xDA,0x10,0x00,0x99 \
+  ARDUINO_IP=0,0,0,0 \
+  ORION_IP=0,0,0,0 \
+  ORION_PORT=1026 \
+  ENTITY_TYPE=MDuino \
+  ENTITY_ID=MDuino_1 \
+  FIWARE_SERVICE=openiot \
+  FIWARE_SERVICE_PATH=/ \
+  POLLING_TIME=10000
 ```
-
-## Building from your own source files
-
-Alternatively, if you want to build directly from your own sources, please copy the existing `Dockerfile` into file the
-root of the repository and amend it to copy over your local source using :
-
-```Dockerfile
-COPY . /opt/component/
-```
-
-Full instructions can be found within the `Dockerfile` itself.
-
-### Using PM2
-
-The Component within the Docker image can be run encapsulated within the [pm2](http://pm2.keymetrics.io/) Process
-Manager by adding the `PM2_ENABLED` environment variable.
-
-```console
-docker run --name component -e PM2_ENABLED=true -d fiware/component-ul
-```
-
-Use of pm2 is **disabled** by default. It is unnecessary and counterproductive to add an additional process manager if
-your dockerized environment is already configured to restart Node.js processes whenever they exit (e.g. when using
-[Kubernetes](https://kubernetes.io/))

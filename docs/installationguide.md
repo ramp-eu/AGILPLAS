@@ -1,6 +1,7 @@
 # Installation & Administration Guide
 
 -   [Installation](#installation)
+    -   [Docker](#docker)
     -   [Arduino IDE](#arduino-ide)
     -   [Orion Context Broker](#orion-context-broker)
 -   [Configuration](#configuration)
@@ -9,9 +10,16 @@
 
 ## Installation
 
+#### Docker
+
+In case you don't have an M-DUINO PLC to work with we have developed a dockerized simulation.
+If you don't have Docker you can install it [here](https://docs.docker.com/get-docker/).
+
 #### Arduino IDE
 
-This is the main tool to write and upload code to the M-DUINO board.
+**This can only be used if you have an M-DUINO. If not, check the [Step by Step](stepbystep.md) for a dockerized simulation.**
+
+It's the main tool to write and upload code to the M-DUINO board.
 Download [here](https://www.arduino.cc/en/software).
 
 #### Orion Context Broker
