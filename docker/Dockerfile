@@ -1,63 +1,28 @@
+FROM ubuntu
 
+ENV ORION_IP=0,0,0,0
 
-ARG NODE_VERSION=10.19.0-slim
-FROM node:${NODE_VERSION}
-ARG GITHUB_ACCOUNT=jason-fox
-ARG GITHUB_REPOSITORY=TTE.project1
-ARG DOWNLOAD=latest
-ARG SOURCE_BRANCH=master
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+  git \
+  curl \
+  build-essential \
+  libelf-dev \
+  avr-libc \
+  gcc-avr \
+  freeglut3-dev \
+  libncurses5-dev \
+  pkg-config \
+  gettext-base
 
-ENV GITHUB_ACCOUNT=${GITHUB_ACCOUNT}
-ENV GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
-ENV DOWNLOAD=${DOWNLOAD}
+RUN curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
 
-RUN apt-get update && \
-	# Ensure that unzip, wget and curl are installed
-	apt-get install -y --no-install-recommends unzip ca-certificates curl wget && \
-	if [ "${DOWNLOAD}" = "latest" ] ; \
-	then \
-		RELEASE="${SOURCE_BRANCH}"; \
-		echo "INFO: Building Latest Development from ${SOURCE_BRANCH} branch."; \
-	elif [ "${DOWNLOAD}" = "stable" ]; \
-	then \
-		RELEASE=$(curl -s https://api.github.com/repos/"${GITHUB_ACCOUNT}"/"${GITHUB_REPOSITORY}"/releases/latest | grep 'tag_name' | cut -d\" -f4); \
-		echo "INFO: Building Latest Stable Release: ${RELEASE}"; \
-	else \
-	 	RELEASE="${DOWNLOAD}"; \
-	 	echo "INFO: Building Release: ${RELEASE}"; \
-	fi && \
-	RELEASE_CONCAT=$(echo "${RELEASE}" | tr / -); \
-	wget --no-check-certificate -O source.zip https://github.com/"${GITHUB_ACCOUNT}"/"${GITHUB_REPOSITORY}"/archive/"${RELEASE}".zip && \
-	unzip source.zip && \
-	rm source.zip && \
-	mv "${GITHUB_REPOSITORY}-${RELEASE_CONCAT}" /opt/component && \
-	# Remove unzip and clean apt cache
-	apt-get clean && \
-	apt-get remove -y unzip && \
-	apt-get -y autoremove && \
-	rm -rf /var/lib/apt/lists/* 
+RUN arduino-cli core install industrialshields:avr --additional-urls http://apps.industrialshields.com/main/arduino/boards/package_industrialshields_index.json
 
-WORKDIR /opt/component
+WORKDIR /demo
 
-RUN \
-	# Ensure that Git is installed prior to running npm install
-	apt-get update && \
-	apt-get install -y --no-install-recommends git && \
-	npm install pm2@3.2.2 -g && \
-	echo "INFO: npm install --production..." && \
-	npm install --production && \
-	# Remove Git and clean apt cache
-	apt-get clean && \
-	apt-get remove -y git && \
-	apt-get -y autoremove && \
-	chmod +x docker/entrypoint.sh && \
-	apt-get clean && \
-	rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/ramp-eu/AGILPLAS.git
 
-USER node
-ENV NODE_ENV=production
+RUN envsubst < AGILPLAS/src/main/main.ino > AGILPLAS/src/main/main.ino
 
-# Expose 8080
-EXPOSE 8080
-
-ENTRYPOINT ["docker/entrypoint.sh"]
+RUN git clone https://github.com/buserror/simavr.git && \
+  cd simavr && make && cd ..
