@@ -14,6 +14,9 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 | :books: [Documentation](https://agilplas.readthedocs.io/en/latest) |
 | --------------------------------------------- |
 
+| :books: [Documentation](https://agilplas.readthedocs.io/en/latest) | :whale: [Docker Hub](https://hub.docker.com/r/jaclavijo/agilplas) |
+| --------------------------------------------- | ------------------------------------------------------------- |
+
 
 ## Contents
 
