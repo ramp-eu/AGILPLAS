@@ -20,13 +20,32 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 -   [Background](#background)
 -   [Install](#install)
 -   [Usage](#usage)
+-   [Step by Step](#step-by-step)
 -   [API](#api)
 -   [Testing](#testing)
 -   [License](#license)
 
 ## Background
 
+#### Use Case Description
+
+AGILPLAS aims to improve the production system of a plastic manufacturer, XIMA, thanks to the use of an IIoT (Industrial Internet of Things) platform based on the use of FIWARE and implemented by Bosonit S.L.
+
+The main problem to be solved is clogging or adhesion of material to the mould in plastic injection processes​, which leads to manual maintenance tasks, affecting productivity​.
+
+#### Proposed Solution
+
+- Real time monitoring of the performance on different scenarios​.
+- Set an understanding on conditions that make this problem arise.
+- Predictive maintenance system that could anticipate stops in product lines​.
+
+The hardware to be monitored consists of an inyector machine and a robotic arm.
+
+This repository contains the solution to read digital signals directly from the robotic arm.
+
 An M-DUINO PLC is a robust piece of hardware designed to work in industrial environments. It can read and write data through digital, relay and analog pins; and has an underlying programmable Arduino board. The repository contains the necessary firmware to program and control the device’s behaviour. This firmware is Arduino (C++) code.
+
+As a result of the development of this use case, this is a more generic implementation FIWARE compatible firmware to persist any signal in an electrical panel towards an OCB.
 
 ## Install
 
@@ -34,7 +53,11 @@ Information about how to install the AGILPLAS ROSE-AP can be found at the corres
 
 ## Usage
 
-Information about how to use the <Name of component> can be found in the [User & Programmers Manual](usermanual.md).
+Information about how to use the AGILPLAS ROSE-AP can be found in the [User & Programmers Manual](usermanual.md).
+
+## Step by Step
+
+In case you don't have an M-DUINO PLC, a simulation tutorial can be found in the [Step by Step](stepbystep.md).
 
 ## API
 
