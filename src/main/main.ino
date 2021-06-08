@@ -9,8 +9,8 @@
 ///////////////////////////////////////////////////////////////////
 // Configure your mac and local IP for the Ethernet library
 // https://www.arduino.cc/en/Reference/EthernetBegin
-byte mac[] = {0x90, 0xA2, 0xDA, 0x10, 0x00, 0x99};
-IPAddress myIP (0, 0, 0, 0);
+byte mac[] = {${ARDUINO_MAC}};
+IPAddress myIP (${ARDUINO_IP});
 // IPAddress myDNS (8, 8, 8, 8);
 // IPAddress myGATEWAY (128, 64, 10, 1);
 // IPAddress mySUBNET (255, 255, 255, 0);
@@ -27,25 +27,19 @@ const Input* inputs[] = {
     new Input(I0_2, "Input_2"),
     new Input(I0_3, "Input_3"),
     new Input(I0_4, "Input_4"),
-    new Input(I0_5, "Input_5"),
-    new Input(I0_6, "Input_6"),
-    new Input(I0_7, "Input_7"),
-    new Input(I0_8, "Input_8"),
-    new Input(I0_9, "Input_9"),
-    new Input(I0_10, "Input_10"),
-    new Input(I0_11, "Input_11")
+    new Input(I0_5, "Input_5")
 };
 
 // Configure your OCB instance IP
-const IPAddress orionIP (0, 0, 0, 0);
-const int orionPort = 1026;
+const IPAddress orionIP (${ORION_IP});
+const int orionPort = ${ORION_PORT};
 
-const String entityType = "MDuino";
-const String entityId = "MDuino_1";
-const String fiwareService = "openiot";
-const String fiwareServicePath = "/";
+const String entityType = ${ENTITY_TYPE};
+const String entityId = ${ENTITY_ID};
+const String fiwareService = ${FIWARE_SERVICE};
+const String fiwareServicePath = ${FIWARE_SERVICE_PATH};
 
-const int POLLING_TIME = 10000;
+const int POLLING_TIME = ${POLLING_TIME};
 
 ///////////////////////////////////////////////////////////////////
 // SETUP
