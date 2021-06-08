@@ -38,6 +38,7 @@ Information about how to use the <Name of component> can be found in the [User &
 
 ## API
 
+A simple API guide can be found [here](api.md).
 
 ## Testing
 
