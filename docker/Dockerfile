@@ -1,5 +1,15 @@
 FROM ubuntu
 
+ENV ARDUINO_MAC=0x90,0xA2,0xDA,0x10,0x00,0x99 \
+  ARDUINO_IP=0,0,0,0 \
+  ORION_IP=0,0,0,0 \
+  ORION_PORT=1026 \
+  ENTITY_TYPE=MDuino \
+  ENTITY_ID=MDuino_1 \
+  FIWARE_SERVICE=openiot \
+  FIWARE_SERVICE_PATH=/ \
+  POLLING_TIME=10000
+
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   git \
   curl \

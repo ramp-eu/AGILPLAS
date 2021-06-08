@@ -34,10 +34,10 @@ const Input* inputs[] = {
 const IPAddress orionIP (${ORION_IP});
 const int orionPort = ${ORION_PORT};
 
-const String entityType = ${ENTITY_TYPE};
-const String entityId = ${ENTITY_ID};
-const String fiwareService = ${FIWARE_SERVICE};
-const String fiwareServicePath = ${FIWARE_SERVICE_PATH};
+const String entityType = "${ENTITY_TYPE}";
+const String entityId = "${ENTITY_ID}";
+const String fiwareService = "${FIWARE_SERVICE}";
+const String fiwareServicePath = "${FIWARE_SERVICE_PATH}";
 
 const int POLLING_TIME = ${POLLING_TIME};
 
