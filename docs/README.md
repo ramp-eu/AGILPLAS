@@ -11,9 +11,6 @@ This ROSE-AP is a bridge that connects M-DUINO PLCs with NGSI Context Brokers.
 This project is part of [DIH^2](http://www.dih-squared.eu/). For more information check the RAMP Catalogue entry for the
 [components](https://github.com/xxx).
 
-| :books: [Documentation](https://agilplas.readthedocs.io/en/latest) |
-| --------------------------------------------- |
-
 | :books: [Documentation](https://agilplas.readthedocs.io/en/latest) | :whale: [Docker Hub](https://hub.docker.com/r/jaclavijo/agilplas) |
 | --------------------------------------------- | ------------------------------------------------------------- |
 
