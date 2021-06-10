@@ -9,10 +9,11 @@ use_directory_urls: false
 theme: readthedocs
 nav:
   - Home: 'README.md'
+  - Step by Step: 'stepbystep.md'
   - User & Programmers Manual:
     - 'Architecture' : 'architecture.md'
     - 'User Guide': 'usermanual.md'
     - 'API' : 'api.md'
-    - 'How to Contribute': 'contribution.md'
+    - 'How to Contribute': 'CONTRIBUTING.md'
   - 'Installation & Administration Manual':
     - 'Installation Guide': 'installationguide.md'
