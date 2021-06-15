@@ -2,6 +2,7 @@
 
 [![License: Apache](https://img.shields.io/github/license/ramp-eu/AGILPLAS.svg)](https://www.apache.org/licenses/LICENSE-2.0.html#redistribution)
 [![Documentation Status](https://readthedocs.org/projects/agilplas/badge/?version=latest)](https://agilplas.readthedocs.io/en/latest)
+[![CI](https://github.com/ramp-eu/AGILPLAS/actions/workflows/docker.yml/badge.svg)](https://github.com/ramp-eu/AGILPLAS/actions/workflows/docker.yml)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4885/badge)](https://bestpractices.coreinfrastructure.org/projects/4885)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9bb23f0af38e4a269f35bd910e7fbcec)](https://app.codacy.com/gh/ramp-eu/AGILPLAS?utm_source=github.com&utm_medium=referral&utm_content=ramp-eu/AGILPLAS&utm_campaign=Badge_Grade_Settings)
 
