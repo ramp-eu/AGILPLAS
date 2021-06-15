@@ -21,9 +21,8 @@ This project is part of [DIH^2](http://www.dih-squared.eu/). For more informatio
 -   [Background](#background)
 -   [Install](#install)
 -   [Usage](#usage)
--   [Step by Step](#step-by-step)
+-   [Getting started](#getting-started)
 -   [API](#api)
--   [Testing](#testing)
 -   [License](#license)
 
 ## Background
@@ -52,20 +51,15 @@ As a result of the development of this use case, this is a more generic implemen
 
 Information about how to install the AGILPLAS ROSE-AP can be found at the corresponding section of the [Installation & Administration Guide](installationguide.md).
 
-## Usage
+## Getting started
 
-Information about how to use the AGILPLAS ROSE-AP can be found in the [User & Programmers Manual](usermanual.md).
+If you don't have access to a physical M-DUINO PLC, it is recommended to start with the [Step by Step tutorial](stepbystep.md).
 
-## Step by Step
-
-In case you don't have an M-DUINO PLC, a simulation tutorial can be found in the [Step by Step](stepbystep.md).
+Upon completion of the tutorial or if you have the hardware available, an in depth code description can be found in the [User & Programmers Manual](usermanual.md).
 
 ## API
 
 A simple API guide can be found [here](api.md).
-
-## Testing
-
 
 ## License
 
