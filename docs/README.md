@@ -45,7 +45,7 @@ This repository contains the solution to read digital signals directly from the 
 
 An M-DUINO PLC is a robust piece of hardware designed to work in industrial environments. It can read and write data through digital, relay and analog pins; and has an underlying programmable Arduino board. The repository contains the necessary firmware to program and control the device’s behaviour. This firmware is Arduino (C++) code.
 
-As a result of the development of this use case, this is a more generic implementation FIWARE compatible firmware to persist any signal in an electrical panel towards an OCB.
+As a result of the development of this use case, this is a more generic implementation of a FIWARE compatible firmware to persist any signal in an electrical panel towards an OCB.
 
 ## Install
 

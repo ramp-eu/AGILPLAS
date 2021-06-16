@@ -8,9 +8,9 @@
 
 This guide will cover, step-by-step, a demo for this ROSE-AP.
 
-As commented throughout this documentation, this repository is mainly composed of firmware for an M-DUINO PLC. All of the development has been done with the physical device connected to the the computer via USB-B as can be seen in the [architecture](architecture.md).
+As commented throughout this documentation, this repository is mainly composed of firmware for an M-DUINO PLC. All of the development has been done with the physical device connected to the computer via USB-B as can be seen in the [architecture](architecture.md).
 
-However, if one doesn't have access to the physical hardware, this guide will use a simulation.
+However, if one doesn't have access to the physical hardware, this guide offers a simulation.
 
 ## Dependencies
 
@@ -20,7 +20,7 @@ However, if one doesn't have access to the physical hardware, this guide will us
 
 ## Simulation
 
-1. First we need to pull the Docker image hosted in Docker Hub. Further documentation on the image and a guid to build your own can be found [here](/docker/README.md). This image has all of the necessary dependencies installed.
+1. First we need to pull the Docker image hosted in Docker Hub. Further documentation on the image and a guide to build your own can be found [here](/docker/README.md). This image has all of the necessary dependencies installed.
 
 ```console
 docker pull jaclavijo/agilplas
