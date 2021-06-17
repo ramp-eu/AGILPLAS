@@ -6,9 +6,8 @@ This section assumes you have Docker installed. If not, check the [installation 
 
 This ROSE-AP classifies as firmware which has been developed with a physical M-DUINO. In order to dockerize this experience, a simulator image has been developed. The simulation consists of two main tools:
 
-- **arduino-cli**: a command line interface which implements all of the Arduino IDE. It lets us compile and upload our code. Check its documentation [here](https://arduino.github.io/arduino-cli/latest/).
-
-- **simavr**: an AVR simulator that uses avr-gcc. In order to simplify things, we use it to replicate the M-DUINO's underlying Arduino board and run our firmware. Check its repository [here](https://arduino.github.io/arduino-cli/latest/).
+-   **arduino-cli**: a command line interface which implements all of the Arduino IDE. It lets us compile and upload our code. Check its documentation [here](https://arduino.github.io/arduino-cli/latest/).
+-   **simavr**: an AVR simulator that uses avr-gcc. In order to simplify things, we use it to replicate the M-DUINO's underlying Arduino board and run our firmware. Check its repository [here](https://arduino.github.io/arduino-cli/latest/).
 
 ## Built image
 

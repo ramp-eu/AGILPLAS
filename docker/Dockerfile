@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 ENV ARDUINO_MAC=0x90,0xA2,0xDA,0x10,0x00,0x99 \
   ARDUINO_IP=0,0,0,0 \
