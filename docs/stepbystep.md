@@ -16,7 +16,7 @@ However, if one doesn't have access to the physical hardware, this guide offers 
 
 - **arduino-cli**: a command line interface which implements all of the Arduino IDE. It lets us compile and upload our code. Check its documentation [here](https://arduino.github.io/arduino-cli/latest/).
 
-- **simavr**: an AVR simulator that uses avr-gcc. In order to simplify things, we use it to replicate the M-DUINO's underlying Arduino board and run our firmware. Check its repository [here](https://arduino.github.io/arduino-cli/latest/).
+- **simavr**: an AVR simulator that uses avr-gcc. In order to simplify things, we use it to replicate the M-DUINO's underlying Arduino board and run our firmware. Check its repository [here](https://github.com/buserror/simavr).
 
 ## Simulation
 
