@@ -1,0 +1,35 @@
+From ace4f4abb81f0c40cccfa144112e3a086d8eeefc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jaime=20Clavijo=20=C3=81greda?= <jaime.clavijo@bosonit.com>
+Date: Mon, 21 Jun 2021 18:11:21 +0200
+Subject: [PATCH] io: generate random values when reading IOs
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Jaime Clavijo Ágreda <jaime.clavijo@bosonit.com>
+---
+ simavr/sim/avr_ioport.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/simavr/sim/avr_ioport.c b/simavr/sim/avr_ioport.c
+index 64adbc4..8fa4bb4 100644
+--- a/simavr/sim/avr_ioport.c
++++ b/simavr/sim/avr_ioport.c
+@@ -20,6 +20,7 @@
+  */
+
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "avr_ioport.h"
+
+ #define D(_w)
+@@ -33,6 +34,7 @@ avr_ioport_read(
+ 	avr_ioport_t * p = (avr_ioport_t *)param;
+ 	uint8_t ddr = avr->data[p->r_ddr];
+ 	uint8_t v = (avr->data[p->r_pin] & ~ddr) | (avr->data[p->r_port] & ddr);
++	v = rand();
+ 	avr->data[addr] = v;
+ 	// made to trigger potential watchpoints
+ 	v = avr_core_watch_read(avr, addr);
+--
+2.28.0.windows.1

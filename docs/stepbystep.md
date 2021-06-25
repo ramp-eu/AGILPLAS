@@ -111,3 +111,63 @@ ERROR: Connection to OCB @ 0.0.0.0:1026 failed..
 ```
 
 As we can see, the connection fails. This is due to not being able to simulate the Ethernet Arduino library with the AVR. This one of the possible improvements of the simulation.
+
+5. For the moment we only read 0s from the digital inputs, but we can simulate random reads apllying [this patch](src\0001-io-generate-random-values-when-reading-IOs.patch) to the simavr implementation.
+
+```console
+cd simavr
+```
+```console
+git apply /demo/AGILPLAS/src/0001-random-values.patch
+```
+```console
+make
+```
+
+6. Now we can repeat the simulation and see random input values.
+
+```console
+simavr/simavr/run_avr -m atmega2560 -f 16000000 AGILPLAS/src/main/build/industrialshields.avr.mduino/main.ino.elf
+```
+
+Output:
+
+```
+----- Sending Data to OCB..
+POST /v2/op/update HTTP/1.1..
+{..
+  "actionType": "append",..
+  "entities": [..
+    {..
+      "type": "MDuino",..
+      "id": "MDuino_1",..
+      "Input_0": {..
+        "value": 0,..
+        "type": "Integer"..
+      },..
+      "Input_1": {..
+        "value": 1,..
+        "type": "Integer"..
+      },..
+      "Input_2": {..
+        "value": 1,..
+        "type": "Integer"..
+      },..
+      "Input_3": {..
+        "value": 0,..
+        "type": "Integer"..
+      },..
+      "Input_4": {..
+        "value": 1,..
+        "type": "Integer"..
+      },..
+      "Input_5": {..
+        "value": 0,..
+        "type": "Integer"..
+      }..
+    }..
+  ]..
+}..
+ERROR: Connection to OCB @ 0.0.0.0:1026 failed..
+
+```
