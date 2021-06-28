@@ -4,9 +4,14 @@
 -   [Dependencies](#dependencies)
 -   [Simulation](#simulation)
 
+Check out the Step by Step tutorial video with live comments.
+
+| :tv: [Step by Step](https://www.youtube.com/watch?v=l9fPVTmVrXs) |
+| --------------------------------------------- |
+
 ## Introduction
 
-This guide will cover, step-by-step, a demo for this ROSE-AP.
+This guide covers, step-by-step, a demo for this ROSE-AP.
 
 As commented throughout this documentation, this repository is mainly composed of firmware for an M-DUINO PLC. All of the development has been done with the physical device connected to the computer via USB-B as can be seen in the [architecture](architecture.md).
 
