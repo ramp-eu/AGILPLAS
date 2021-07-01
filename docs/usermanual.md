@@ -1,9 +1,14 @@
 # User & Programmers Manual
 
+-   [Preamble](#preamble)
 -   [Startup](#startup)
 -   [Libraries](#libraries)
 -   [Variable Configuration](#variable-configuration)
 -   [Example](#example)
+
+## Preamble
+
+This manual is written taking into account that an M-DUINO PLC is available. Nonetheless, it can be very helpful for anyone coming from the Step by Step video. If that's you, have in mind some points may not apply.
 
 ## Startup
 
@@ -12,11 +17,11 @@
 2. Start Arduino IDE and select `File > Open... > main.ino` file. This will open the whole main sketch and both `readData.ino` and `sendData.ino`.
 
 3. Click Tools and make sure the following are selected:
-```
-Board: "M-Duino family" > Industrial Shields Boards > M-Duino family
-Model: "M-Duino 21+"
-```
-If the boards aren't installed refer to [Arduino IDE board installation guide](https://www.industrialshields.com/first-steps-with-the-industrial-arduino-based-plc-s-and-the-panel-pc-s-raspberry-pi-based#boards).
+
+        Board: "M-Duino family" > Industrial Shields Boards > M-Duino family
+        Model: "M-Duino 21+"
+
+    If the boards aren't installed refer to [Arduino IDE board installation guide](https://www.industrialshields.com/first-steps-with-the-industrial-arduino-based-plc-s-and-the-panel-pc-s-raspberry-pi-based#boards).
 
 4. This code is written in Arduino (C++ with some additional features). There are two mandatory functions:
     - [`setup()`](https://www.arduino.cc/reference/en/language/structure/sketch/setup/) is called when a sketch starts.
