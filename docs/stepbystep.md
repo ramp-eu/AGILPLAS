@@ -6,7 +6,7 @@
 
 Check out the Step by Step tutorial video with live comments.
 
-| :tv: [Step by Step](https://www.youtube.com/watch?v=l9fPVTmVrXs) |
+| :tv: [Step by Step](https://www.youtube.com/watch?v=xCzPRogITBY) |
 | --------------------------------------------- |
 
 ## Introduction
@@ -48,7 +48,7 @@ However, if one doesn't have access to the physical hardware, this guide offers 
     Output:
 
     Initial configuration:
-    
+
         Loaded 16126 .text at address 0x0
         Loaded 744 .data
         ----- Input Configuration:..
@@ -59,14 +59,14 @@ However, if one doesn't have access to the physical hardware, this guide offers 
         Input-> reference: 56, alias: Input_4..
         Input-> reference: 57, alias: Input_5..
         Local IP:0..
-        
+
     The digital inputs are then read:
-    
+
         ----- Reading digital inputs..
         ----- Digital inputs read..
-        
+
     And finally the read inputs are sent towards an OCB:
-    
+
         ----- Sending Data to OCB..
         POST /v2/op/update HTTP/1.1..
         {..
